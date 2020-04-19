@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Source+Sans+Pro&display=swap');
+
+$bg-color: rgb(251, 250, 251);
+$menu-bg-color: rgb(46, 50, 53);
+$text-color: rgb(62, 62, 61);
+$accent-color1: rgb(208, 74, 77);
+$accent-color2: rgb(167, 175, 178);
+$accent-color3: rgb(239, 239, 238);
+
+
+body 
+{
+    background: $bg-color;
+    color: $text-color;
+    font-family: 'Source Sans Pro';
+    margin: 0;
+    
+    a
+    {
+        display: flex;
+        text-decoration: none;
+        transition: transform, background-color .3s ease;
+        color: $accent-color1;
+
+        &:hover
+        {
+            color: $accent-color1;
+            transform: translateY(-1px);
+        }
+    }
+
+    p
+    {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .btn
+    {
+
+    }
+
+    .col
+    {
+        margin: 20px;
+        padding: 20px;
+        width: 25%;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
+        @media (min-width: 769px) and (max-width: 1100px) {
+            width: 40%;
+        }
+        
+    }
+
+    .card
+    {
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        transition: background-color, box-shadow .3s ease;
+
+        &::after
+        {
+            background-color: $accent-color2;
+            content: ' ';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            transition: background-color .3s ease;
+            top: 0;
+            width: 4px;
+        }
+
+        &:hover
+        {
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+            &::after
+            {
+                background-color: $accent-color1;
+            }
+        }
+
+        img
+        {
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        a
+        {
+
+            &.img
+            {
+                &::after, &::before
+                {
+                    display: none;
+                }
+            }
+
+            &::after
+            {
+                content: ']';
+                color: $accent-color2;
+                padding-left: 4px;
+            }
+
+            &::before
+            {
+                content: '[ ';
+                color: $accent-color2;
+                padding-right: 4px;
+            }
+        }
+    }
+
+    .heading
+    {
+        font-family: 'Bree Serif';
+        margin: 0;
+    }
+
+    header 
+    {
+        display: flex;
+        padding: 20px 0;
+
+        @media (max-width: 768px) {
+            padding: 0;
+        }
+
+        nav
+        {
+            background: $menu-bg-color;
+            border-radius: 10px 0 0 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+            margin-left: auto;
+            padding: 0 20px;
+
+            @media (max-width: 768px) {
+                border-radius: 0;
+                margin: 0;
+                width: 100%;
+            }
+            
+            ul 
+            {
+                align-items: center;
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    padding: 20px 0;
+                }
+
+                li 
+                {
+                    color: $bg-color;
+
+                    @media (max-width: 768px) {
+                        display: none;
+                        width: 100%;
+                    }
+
+                    &.heading
+                    {
+                        display: flex;
+                        align-items: center;
+                        font-size: 1.2rem;
+                        margin-right: 30px;
+
+                        @media (max-width: 768px) {
+                            justify-content: space-between;
+                            margin: 0;
+                        }
+
+                        a
+                        {
+                            background: rgba(0, 0, 0, 0.3);
+                            border-radius: 5px;
+                            display: none;
+                            font-size: 1.5rem;
+                            padding: 1px 8px 3px;
+                            transition: background-color .3s ease;
+
+                            &:hover
+                            {
+                                background: rgba(0, 0, 0, 0.5);
+                                transform: none;
+                            }
+
+                            @media (max-width: 768px) {
+                                display: flex;
+                            }
+                        }
+                    }
+
+                    a
+                    {
+                        color: $bg-color;
+                        height: 100%;
+                        padding: 20px;
+                        
+
+                        @media (max-width: 768px) {
+                            border-radius: 5px;
+                            margin: 5px 0;
+                            padding: 10px 20px;
+                        }
+
+                        &:hover
+                        {
+                            background-color: rgba(0, 0, 0, 0.15);
+                            color: inherit;
+                            transform: none;
+                        }
+
+                        &.selected
+                        {
+                            background: $accent-color1;
+                            color: $bg-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: 20px;
+    }
+}
