@@ -107,6 +107,7 @@ body .form-input {
   font: normal 1rem "Source Sans Pro";
   margin-bottom: 15px;
   padding: 10px;
+  resize: vertical;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
 }
@@ -241,6 +242,11 @@ body section#contato form {
   display: flex;
   flex-direction: column;
   width: 50%;
+}
+@media (max-width: 768px) {
+  body section#contato form {
+    width: 90%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

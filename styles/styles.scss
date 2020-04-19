@@ -157,6 +157,7 @@ body
         font: normal 1rem 'Source Sans Pro';
         margin-bottom: 15px;
         padding: 10px;
+        resize: vertical;
         transition: border-color .3s ease, box-shadow .3s ease;
         width: 100%;
 
@@ -319,6 +320,10 @@ body
                 display: flex;
                 flex-direction: column;
                 width: 50%;
+
+                @media (max-width: 768px) {
+                    width: 90%;
+                }
             }
         }
     }
