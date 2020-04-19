@@ -6,9 +6,9 @@ body {
   margin: 0;
 }
 body a {
-  display: flex;
+  display: inline-block;
   text-decoration: none;
-  transition: transform, background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
   color: #d04a4d;
 }
 body a:hover {
@@ -18,6 +18,26 @@ body a:hover {
 body p {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+body .btn {
+  background-color: #d04a4d;
+  border: none;
+  border-radius: 5px;
+  color: #fbfafb;
+  cursor: pointer;
+  font: normal 1rem "Source Sans Pro";
+  padding: 10px;
+  transition: box-shadow 0.3s ease;
+  width: 200px;
+}
+body .btn:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+body .btn:active {
+  box-shadow: inset 0 -10px 10px rgba(255, 255, 255, 0.2);
+}
+body .btn:focus {
+  outline: none;
 }
 body .col {
   margin: 20px;
@@ -80,6 +100,23 @@ body .card a::before {
 body .heading {
   font-family: "Bree Serif";
   margin: 0;
+}
+body .form-input {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  font: normal 1rem "Source Sans Pro";
+  margin-bottom: 15px;
+  padding: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+body .form-input:hover {
+  border-color: #a7afb2;
+}
+body .form-input:focus {
+  border-color: #d04a4d;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  outline: none;
 }
 body header {
   display: flex;
@@ -180,8 +217,30 @@ body header nav ul li a.selected {
 body section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   margin: 20px;
+}
+body section#noticias {
+  justify-content: space-evenly;
+}
+@media (max-width: 768px) {
+  body section#sobre {
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 10px 20px;
+  }
+}
+body section#sobre img {
+  border-radius: 50%;
+  margin-right: 30px;
+  width: 150px;
+}
+body section#contato {
+  flex-direction: column;
+}
+body section#contato form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
 /*# sourceMappingURL=styles.css.map */
